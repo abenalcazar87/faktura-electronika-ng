@@ -1,12 +1,21 @@
-.sidenav-container {
-  height: 100%;
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
 }
 
-.sidenav {
-  width: 200px;
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
+mat-toolbar-row {
+  justify-content: space-between;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
 }
