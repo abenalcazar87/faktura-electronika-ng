@@ -6,11 +6,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatCardModule, MatMenuModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { HomeComponent } from './home/home.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ProductosComponent } from './productos/productos.component';
+import { RouterModule, Routes } from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+
+
+
+const appRoutes: Routes = [
+  { path: '1', component: HomeComponent  },
+  { path: '2', component: ClientesComponent },
+  { path: '3', component: ProductosComponent },
+  { path: '',
+    redirectTo: '/1',
+    pathMatch: 'full'
+  },
+  { path: '**', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    ClientesComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +45,14 @@ import { MatCardModule, MatMenuModule, MatToolbarModule, MatButtonModule, MatSid
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
