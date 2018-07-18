@@ -1,58 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatCardModule, MatMenuModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { HomeComponent } from './home/home.component';
-import { ClientesComponent } from './clientes/clientes.component';
-import { ProductosComponent } from './productos/productos.component';
-import { RouterModule, Routes } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
-
-
-
-const appRoutes: Routes = [
-  { path: '1', component: HomeComponent  },
-  { path: '2', component: ClientesComponent },
-  { path: '3', component: ProductosComponent },
-  { path: '',
-    redirectTo: '/1',
-    pathMatch: 'full'
-  },
-  { path: '**', component: HomeComponent }
-];
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    ClientesComponent,
-    ProductosComponent
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MatCardModule,
-    MatMenuModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-    )
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

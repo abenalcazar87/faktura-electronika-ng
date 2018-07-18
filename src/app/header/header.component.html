@@ -1,6 +1,14 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
-    (mouseleave)="decrease()">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    class="example-sidenav"
+    [ngStyle]="{ 'width.em': sidenavWidth }"
+    opened="true"
+    (mouseenter)="increase()"
+    (mouseleave)="decrease()"
+
+    >
     <mat-nav-list>
       <mat-list-item routerLink="1" routerLinkActive="active" >
         <mat-icon aria-label="home">home</mat-icon>
